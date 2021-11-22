@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Video Collection</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-   <!--the main player-->
+    <!--the main player-->
     <div class="player">
         <!--the video playing-->
         <video src="./halal spiderman.mp4"> this video is not supported</video>
+        <div class="lower-bar">
+            <input type="range" name="progress" id="progress">
+            <div class="controls">
+                <!--play button-->
+                <div class="left">
+                    <button>
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <!--time-->
+                    <span class="time hrs">1</span>
+                    <span>:</span>
+                    <span class="time sec">0</span>
+                </div>
+                <div class="right">
+                    <!--voulme-->
+                    <i class="fa-solid fa-volume-high"></i>
+                    <input type="range" name="volume" id="vol-range" min="0" max="100">
+                    <!--fullscreen-->
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+
+            </div>
+        </div>
         <!--the progress bar-->
-        <div class="progress-bar">
-            <div class="progress-juice"></div>
-        </div>
-        <div class="controls">
-            <!--play button-->
-            <button>
-                <i class="fa-solid fa-play"></i>
-            </button>
-            <!--time-->
-            <span class="time hrs">1</span>
-            <span>:</span>
-            <span class="time sec">0</span>
-            <!--voulme-->
-            <div class="vol"></div>
-        </div>
+
     </div>
-    
-        
+    <div>dasdisjdiasdadhaididjh</div>
+
 </body>
+
 </html>
