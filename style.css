@@ -1,24 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2&display=swap');
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 body{
     min-height: 100vh;
+    font-family: 'M PLUS 2', sans-serif;
+    overflow-x: hidden;
+    background-color: #cdeff1;
+}
+.container{
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
 }
-.player{
+.playlist{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    gap: 15px;
+}
+.video video{
+    width: 100vw;
+    
+}
+h3{
+    margin: 1rem;
+}
+h2{
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+.vid{
+    width: 90%;
+    align-items: center;
     display: flex;
-    flex-flow: column;
-    width: 100%;
+    margin: 0 1rem;
+    background-color:#a2d4da;
+    border-radius: 7px;
+    padding: 0.5rem;
 }
-#progress{
-    width: 100%;
-}
-.lower-bar{
-    width: 100%;
-}
-.controls{
-    display: flex;
+.vid video{
+    width: 15%;
 }
