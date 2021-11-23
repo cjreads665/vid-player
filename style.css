@@ -19,10 +19,19 @@ body{
     display: grid;
     grid-template-rows: repeat(5,1fr);
     gap: 15px;
+    overflow: scroll;
 }
 .video video{
     width: 100vw;
     
+}
+.vid{
+    cursor: pointer;
+}
+.vid.active{
+    /* border: 2px black solid;
+     */
+     background-color: #34abf0;
 }
 h3{
     margin: 1rem;
