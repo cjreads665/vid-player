@@ -8,5 +8,10 @@ playlist.forEach(vid=>{
         // console.log(vid.classList)
         playlist.forEach(vid=>vid.classList.remove('active'))
         vid.classList.add('active')
+        if(vid.classList.contains('active')){
+            // console.log();/
+            let src =vid.children[0].getAttribute('src')
+            
+        }
     })
 })
