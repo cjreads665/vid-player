@@ -10,6 +10,17 @@ body{
     overflow-x: hidden;
     background-color: #cdeff1;
 }
+.main-vid{
+    border: black 2px solid;
+    position: relative;
+}
+.main-vid .play-btn{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    font-size: 100px;
+    color: rgb(136, 123, 123,0.6);
+}
 .container{
     display: grid;
     grid-template-columns: 1fr;

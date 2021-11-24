@@ -11,7 +11,10 @@ playlist.forEach(vid=>{
         if(vid.classList.contains('active')){
             // console.log();/
             let src =vid.children[0].getAttribute('src')
-            
+            // console.log(mainVid.src)
+            mainVid.src = src;
+            // console.log(vid.children[1]);
+            title.innerHTML = vid.children[1].innerHTML
         }
     })
 })
