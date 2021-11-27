@@ -23,9 +23,11 @@ playlist.forEach(vid=>{
 
 
 //code for video-player
+let vidContain = document.querySelector('.video')
+console.log(vidContain);
 let vol = document.getElementById('vol-control')
 let fullScr = document.querySelector('.fa-up-right-and-down-left-from-center')
-console.log(fullScr);
+// console.log(fullScr);
 let minutes =document.querySelector('.min')
 let seconds =document.querySelector('.sec')
 let flag='pause'
@@ -72,7 +74,11 @@ function volChange(){
     video.volume = this.value/100
 }
 function screenMe(){
-    video.requestFullscreen()
+    if(!vidContain.requestFullscreen()) vidContain.requestFullscreen()
+    else{
+        document.exitFullscreen()
+    }
+    
 }
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
