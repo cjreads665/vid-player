@@ -21,4 +21,30 @@ playlist.forEach(vid=>{
 
 
 //code for video-player
-
+let flag='pause'
+let seeker = document.getElementById('duration')
+let video = document.querySelector('.video video')
+// console.log(video);
+let playBtn = document.querySelector('.play-btn')
+function disappear(){
+    playBtn.style.opacity=1
+}
+//function to play and pause
+function playTime(){
+    //in case of pause
+    if(flag=='pause'){
+        playBtn.classList.remove('fa-play')
+        playBtn.classList.add('fa-pause')
+        video.play()
+        flag='play'
+    }
+    //in case of play
+    else{
+        playBtn.classList.remove('fa-pause')
+        playBtn.classList.add('fa-play')
+        video.pause()
+        flag='pause'
+    }
+    setTimeout(disappear,1000)
+}
+playBtn.addEventListener('click',playTime)
