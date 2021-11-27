@@ -7,6 +7,8 @@ playlist.forEach(vid=>{
     vid.addEventListener('click',()=>{
         // console.log(vid.classList)
         playlist.forEach(vid=>vid.classList.remove('active'))
+        playBtn.classList.remove('fa-pause')
+        playBtn.classList.add('fa-play')
         vid.classList.add('active')
         if(vid.classList.contains('active')){
             // console.log();/
@@ -21,10 +23,28 @@ playlist.forEach(vid=>{
 
 
 //code for video-player
+let vol = document.getElementById('vol-control')
+
+let minutes =document.querySelector('.min')
+let seconds =document.querySelector('.sec')
 let flag='pause'
 let seeker = document.getElementById('duration')
 let video = document.querySelector('.video video')
-// console.log(video);
+video.onloadedmetadata = function(){
+    // console.log('meta loaded');
+    let duration = this.duration
+    let minDu = Math.floor(duration/60)
+    if(minDu<10) minDu = ('0' + minDu).slice(-2)
+    let secDu = Math.floor(duration%60)
+    if(minDu<10) secDu = ('0' + secDu).slice(-2)
+    
+    minutes.textContent = minDu
+    seconds.textContent = secDu;
+    
+}
+// video.volume=0.32
+// console.log(video.volume);
+
 let playBtn = document.querySelector('.play-btn')
 function disappear(){
     playBtn.style.opacity=1
@@ -47,4 +67,13 @@ function playTime(){
     }
     setTimeout(disappear,1000)
 }
+function volChange(){
+    // console.log();
+    video.volume = this.value/100
+    console.log(video.volume);
+}
+//event listener for play/pause
 playBtn.addEventListener('click',playTime)
+//event listener for volume
+vol.addEventListener('input',volChange)
+//fullscreen handler
