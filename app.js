@@ -24,15 +24,22 @@ playlist.forEach(vid=>{
 
 //code for video-player
 let vidContain = document.querySelector('.video')
-console.log(vidContain);
+// console.log(vidContain);
+let time = document.querySelector('.time')
+let min = document.querySelector('.time .min')
+let sec = document.querySelector('.time sec')
+// console.log(min);
 let vol = document.getElementById('vol-control')
-let fullScr = document.querySelector('.fa-up-right-and-down-left-from-center')
+let fullScr = document.querySelector('.fa-expand')
 // console.log(fullScr);
 let minutes =document.querySelector('.min')
 let seconds =document.querySelector('.sec')
 let flag='pause'
 let seeker = document.getElementById('duration')
 let video = document.querySelector('.video video')
+
+
+
 video.onloadedmetadata = function(){
     // console.log('meta loaded');
     let duration = this.duration
@@ -70,6 +77,7 @@ function playTime(){
     }
     setTimeout(disappear,1000)
 }
+//FUNCTION FOR VOLUME CHANGE
 function volChange(){
     video.volume = this.value/100
 }
@@ -80,9 +88,44 @@ function screenMe(){
     }
     
 }
+//function to tell the duration of video
+function timeTracker(){
+    /**
+     *  minutes.textContent = minDu
+    seconds.textContent = secDu;
+     */
+    let time = setInterval(()=>{
+        if(this.currentTime==this.duration){
+            seconds.textContent = 0
+            clearInterval(time)
+        } 
+        else{
+            //if secs are more than 60
+            if(this.currentTime>60){
+                //divide by 60 to get minutes
+                minutes.textContent = this.currentTime/60
+            }
+            //if seconds is less than equal to sixty
+            else{
+                minutes.textContent = '00'
+                seconds.textContent = Math.floor(this.currentTime)
+            }
+        } 
+    },100)
+       
+}
+
+
+
+
+
+
+
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
 //event listener for volume
 vol.addEventListener('input',volChange)
 //fullscreen handler
 fullScr.addEventListener('click', screenMe)
+
+video.addEventListener('play',timeTracker)
