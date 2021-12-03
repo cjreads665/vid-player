@@ -7,31 +7,41 @@
 body {
   min-height: 100vh;
   font-family: "M PLUS 2", sans-serif;
+  color: white;
   overflow-x: hidden;
-  background-color: #cdeff1;
+  background-color: black;
 }
 .bottom-section{
-  border:2px black solid;
-  background-color: rgb(116, 113, 113);
+  /* border:2px black solid; */
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0,0.7);
   position: absolute;
   display: flex;
   flex-direction: column;
   /* bottom: -1.5rem; */
   bottom: 0;
-  width: 100%;
+  width: 90%;
+  margin: 1rem;
+  color: white;
+  padding: 2%;
 }
 .lower-lower{
   display: flex;
   /* border: 2px solid red; */
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  /* height: 10%; */
 }
 .seeker{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.time{
+  font-size: 0.5rem;
+  /* border: solid white 2px; */
+}
+
 .seeker input{
     justify-self: center;
     width: 100%;
@@ -42,10 +52,12 @@ body {
   justify-content: space-around;
   display: flex;
   align-items: center;
+  width: 30%;
 }
 .vol-main input{
- width: 50%;
+ width: 20%;
   /* margin-left: 5%; */
+  margin-right: 0.2rem;
 }
 /*the sliders*/
 input[type="range"] {
@@ -55,8 +67,11 @@ input[type="range"] {
   height: 0.2rem;
   border-bottom: #333333 1 px solid;
   border-radius: 5px;
+  width: 100%;
 }
-
+.seeker{
+  width: 40%;
+}
 input[type="range"]::-moz-range-track {
   border: none;
   background: rgb(112, 111, 111);
@@ -109,7 +124,7 @@ input[type="range"]::-webkit-slider-thumb {
 .vid.active {
   /* border: 2px black solid;
      */
-  background-color: #34abf0;
+  background-color: rgba(182, 177, 177, 0.4);
 }
 h3 {
   margin: 1rem;
@@ -124,7 +139,7 @@ h2 {
   align-items: center;
   display: flex;
   margin: 0 1rem;
-  background-color: #a2d4da;
+  background-color: rgba(36, 34, 34, 0.7);
   border-radius: 7px;
   padding: 0.5rem;
 }
