@@ -101,10 +101,13 @@ function playTime(){
 }
 //FUNCTION FOR VOLUME CHANGE
 function volChange(){
-    if(this.value/100<0) {
+    if(this.value/100==0) {
         
     }
-    video.volume = this.value/100
+    else{
+        video.volume = this.value/100
+    }
+    
 }
 
 

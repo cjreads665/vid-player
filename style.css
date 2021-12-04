@@ -70,7 +70,7 @@ input[type="range"] {
   width: 100%;
 }
 .seeker{
-  width: 40%;
+  width: 55%;
 }
 input[type="range"]::-moz-range-track {
   border: none;
