@@ -37,11 +37,13 @@ playlist.forEach(vid=>{
         }
     })
 
+//code to make the controls disappear after some time
+
 
 //code for video-player
 let vidContain = document.querySelector('.video')
 // console.log(vidContain);
-
+let volBtn = document.querySelector('.vol-btn')
 let time = document.querySelector('.time')
 let min = document.querySelector('.time .min')
 let sec = document.querySelector('.time sec')
@@ -99,8 +101,13 @@ function playTime(){
 }
 //FUNCTION FOR VOLUME CHANGE
 function volChange(){
+    if(this.value/100<0) {
+        
+    }
     video.volume = this.value/100
 }
+
+
 function screenMe(){
     if(!vidContain.requestFullscreen()) vidContain.requestFullscreen()
     else{
@@ -117,7 +124,25 @@ function timeTracker(){
    
        
 }
+let flagg = true
+function muteMe(){
+    if(flagg==true){
+        //<i class="fas fa-volume-mute"></i>
+        this.classList.remove('fa-volume-high')
+        this.classList.add('fa-volume-mute')
+        flagg=false
+        video.volume = 0
 
+    }
+    else{
+        this.classList.remove('fa-volume-mute')
+        this.classList.add('fa-volume-high')
+        flagg=true
+        video.volume = vol.value/100
+        
+    }
+    
+}
 
 
 
@@ -132,3 +157,4 @@ vol.addEventListener('input',volChange)
 fullScr.addEventListener('click', screenMe)
 
 video.addEventListener('play',timeTracker)
+volBtn.addEventListener('click', muteMe)
