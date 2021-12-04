@@ -21,10 +21,27 @@ playlist.forEach(vid=>{
     })
 })
 
+//CODE FOR TIME IN EACH CONTAINER
+    playlist.forEach(function(container){
+        let k = [...container.children]
+        k[0].onloadedmetadata = function(){
+            let duration = this.duration
+            let minu = Math.floor(duration/60)
+            if(minu<10) minu = ('0' + minu).slice(-2)
+            k[2].textContent = minu
+            let secu = Math.floor(duration%60)
+            if(secu<10) secu = ('0' + secu).slice(-2)
+            k[4].textContent = secu
+
+            // console.log(secu);
+        }
+    })
+
 
 //code for video-player
 let vidContain = document.querySelector('.video')
 // console.log(vidContain);
+
 let time = document.querySelector('.time')
 let min = document.querySelector('.time .min')
 let sec = document.querySelector('.time sec')
@@ -51,6 +68,9 @@ video.onloadedmetadata = function(){
     minutes.textContent = minDu
     seconds.textContent = secDu;
     
+   
+
+
 }
 // video.volume=0.32
 // console.log(video.volume);
@@ -94,24 +114,7 @@ function timeTracker(){
      *  minutes.textContent = minDu
     seconds.textContent = secDu;
      */
-    let time = setInterval(()=>{
-        if(this.currentTime==this.duration){
-            seconds.textContent = 0
-            clearInterval(time)
-        } 
-        else{
-            //if secs are more than 60
-            if(this.currentTime>60){
-                //divide by 60 to get minutes
-                minutes.textContent = this.currentTime/60
-            }
-            //if seconds is less than equal to sixty
-            else{
-                minutes.textContent = '00'
-                seconds.textContent = Math.floor(this.currentTime)
-            }
-        } 
-    },100)
+   
        
 }
 
