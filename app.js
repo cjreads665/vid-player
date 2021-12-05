@@ -42,15 +42,12 @@ playlist.forEach(vid=>{
 
 //code for video-player
 let vidContain = document.querySelector('.video')
-// console.log(vidContain);
 let volBtn = document.querySelector('.vol-btn')
 let time = document.querySelector('.time')
 let min = document.querySelector('.time .min')
 let sec = document.querySelector('.time sec')
-// console.log(min);
 let vol = document.getElementById('vol-control')
 let fullScr = document.querySelector('.fa-expand')
-// console.log(fullScr);
 let minutes =document.querySelector('.min')
 let seconds =document.querySelector('.sec')
 let flag='pause'
@@ -60,7 +57,6 @@ let video = document.querySelector('.video video')
 
 
 video.onloadedmetadata = function(){
-    // console.log('meta loaded');
     let duration = this.duration
     let minDu = Math.floor(duration/60)
     if(minDu<10) minDu = ('0' + minDu).slice(-2)
@@ -74,6 +70,28 @@ video.onloadedmetadata = function(){
 
 
 }
+//mute me
+let flagg = true
+function muteMe(){
+    if(flagg==true){
+        //<i class="fas fa-volume-mute"></i>
+        this.classList.remove('fa-volume-high')
+        this.classList.add('fa-volume-mute')
+        flagg=false
+        video.volume = 0
+
+    }
+    else{
+        this.classList.remove('fa-volume-mute')
+        this.classList.add('fa-volume-high')
+        flagg=true
+        video.volume = vol.value/100
+        
+    }
+    
+}
+
+
 // video.volume=0.32
 // console.log(video.volume);
 
@@ -101,13 +119,16 @@ function playTime(){
 }
 //FUNCTION FOR VOLUME CHANGE
 function volChange(){
-    if(this.value/100==0) {
-        
-    }
-    else{
-        video.volume = this.value/100
-    }
-    
+    video.volume = this.value/100
+    let vidVol = video.volume
+        if(vidVol==0){
+            volBtn.classList.remove('fa-volume-high')
+            volBtn.classList.add('fa-volume-mute')
+        }
+        else{
+            volBtn.classList.remove('fa-volume-mute')
+            volBtn.classList.add('fa-volume-high')
+        }
 }
 
 
@@ -127,25 +148,7 @@ function timeTracker(){
    
        
 }
-let flagg = true
-function muteMe(){
-    if(flagg==true){
-        //<i class="fas fa-volume-mute"></i>
-        this.classList.remove('fa-volume-high')
-        this.classList.add('fa-volume-mute')
-        flagg=false
-        video.volume = 0
 
-    }
-    else{
-        this.classList.remove('fa-volume-mute')
-        this.classList.add('fa-volume-high')
-        flagg=true
-        video.volume = vol.value/100
-        
-    }
-    
-}
 
 
 
