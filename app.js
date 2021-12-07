@@ -28,9 +28,7 @@ playlist.forEach(vid=>{
             let duration = this.duration
             let minu = Math.floor(duration/60)
             if(minu<10) minu = ('0' + minu).slice(-2)
-            setTimeout(()=>{
                 k[2].textContent = minu
-            },2000)
             let secu = Math.floor(duration%60)
             if(secu<10) secu = ('0' + secu).slice(-2)
             k[4].textContent = secu
