@@ -53,22 +53,37 @@ let seconds =document.querySelector('.sec')
 let flag='pause'
 let seeker = document.getElementById('duration')
 let video = document.querySelector('.video video')
+let currentTime = [document.querySelector('.current-min'),document.querySelector('.current-sec')]
+
+function zero(dura){
+    let time1= Math.floor(dura/60)
+    if(time1<10) time1 = ('0' + time1).slice(-2)
+    let seco = Math.floor(dura%60)
+    if(seco<10) seco = ('0' + seco).slice(-2)
+    return [time1,seco]
+}
 
 
-
-video.onloadedmetadata = function(){
+video.onloadedmetadata = function (){
     let duration = this.duration
-    let minDu = Math.floor(duration/60)
-    if(minDu<10) minDu = ('0' + minDu).slice(-2)
-    let secDu = Math.floor(duration%60)
-    if(minDu<10) secDu = ('0' + secDu).slice(-2)
+    let timeArr = zero(duration)
+    // console.log(k);
+    // let minDu = Math.floor(duration/60)
+    // if(minDu<10) minDu = ('0' + minDu).slice(-2)
+    // let secDu = Math.floor(duration%60)
+    // if(minDu<10) secDu = ('0' + secDu).slice(-2)
     
-    minutes.textContent = minDu
-    seconds.textContent = secDu;
-    
-   
-
-
+    minutes.textContent = timeArr[0]
+    seconds.textContent = timeArr[1];
+    setInterval(()=>{
+        // 1:25
+        let duration = video.currentTime
+        // console.log(duration);
+        let timeArr = zero(duration)
+        // console.log(timeArr);
+        currentTime[1].textContent = timeArr[1]
+        currentTime[0].textContent = timeArr[0];
+    },1000)
 }
 //mute me
 let flagg = true
