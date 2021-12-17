@@ -80,7 +80,7 @@ video.onloadedmetadata = function (){
 
     },1000)
 }
-
+console.log(video.currentTime);
 
 //move seeker according to time
 

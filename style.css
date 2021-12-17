@@ -30,6 +30,7 @@ body {
 }
 .lower-lower{
   display: flex;
+  flex-basis: auto;
 }
 .seeker{
     display: flex;
@@ -38,7 +39,7 @@ body {
     margin: 0 1rem;
 }
 .time{
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   /* border: solid white 2px; */
 }
 
