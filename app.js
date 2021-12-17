@@ -109,6 +109,7 @@ function muteMe(){
 }
 
 
+
 // video.volume=0.32
 // console.log(video.volume);
 
@@ -158,8 +159,9 @@ function screenMe(){
 }
 
 function timeUp(){
-   var val = video.currentTime / video.duration * 1
-   console.log(value);
+   var val = video.currentTime / video.duration * 100
+   console.log(val);
+    seeker.value = val
 }
 
 
