@@ -164,7 +164,10 @@ function timeUp(){
     seeker.value = val
 }
 
-
+function changeColor(){
+    // console.log(this);
+    this.style.background = 'linear-gradient(to right, rgb(6, 114, 255) 0%, rgb(6, 114, 255) '+this.value +'%, #fff ' + this.value + '%, white 100%)'
+}
 
 
 
@@ -178,3 +181,4 @@ fullScr.addEventListener('click', screenMe)
 
 volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
+seeker.addEventListener('change',changeColor)
