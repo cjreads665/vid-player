@@ -166,7 +166,7 @@ function timeUp(){
 
 function changeColor(){
     // console.log(this);
-    this.style.background = 'linear-gradient(to right, rgb(6, 114, 255) 0%, rgb(6, 114, 255) '+this.value +'%, #fff ' + this.value + '%, white 100%)'
+    // this.style.background =    
 }
 
 
