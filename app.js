@@ -149,12 +149,17 @@ function volChange(){
         }
 }
 
-
+let scrFlag = false;
 function screenMe(){
-    if(!vidContain.requestFullscreen()) vidContain.requestFullscreen()
-    else{
-        document.exitFullscreen()
+    if(scrFlag==false){
+        vidContain.requestFullscreen()
+        scrFlag=true
     }
+    else{
+        document.exitFullscreen();
+        scrFlag=false
+    }
+
     
 }
 
@@ -169,7 +174,9 @@ function changeColor(){
     // this.style.background =    
 }
 
-
+console.log(vidContain.offsetHeight);
+// if(window.innerHeight==vidCo)
+// console.log;
 
 
 //event listener for play/pause

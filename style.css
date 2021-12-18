@@ -31,6 +31,7 @@ body {
 .lower-lower{
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .seeker{
     display: flex;
@@ -125,6 +126,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .video{
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .video video {
   width: 100vw;
