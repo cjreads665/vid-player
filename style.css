@@ -185,7 +185,7 @@ h2 {
     
   }
 }
-@media (min-width:600px){
+@media (min-width:1020px){
   .playlist{
     position: relative;
     left: 8rem;
@@ -204,5 +204,15 @@ h2 {
     text-align: center;
     position: relative;
     bottom: 2rem;
+  }
+  .vol-main{
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+  }
+  .vol-main input[type="range"]{
+    display: inline;
+    height: 5px;
+    margin: 0 0.5rem;
   }
 }

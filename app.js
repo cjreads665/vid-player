@@ -165,16 +165,16 @@ function screenMe(){
 
 function timeUp(){
    var val = video.currentTime / video.duration * 100
-   console.log(val);
+//    console.log(val);
     seeker.value = val
 }
 
+
 function changeColor(){
-    // console.log(this);
-    // this.style.background =    
+  console.log(this.value * video.duration);
 }
 
-console.log(vidContain.offsetHeight);
+// console.log(vidContain.offsetHeight);
 // if(window.innerHeight==vidCo)
 // console.log;
 
@@ -188,4 +188,5 @@ fullScr.addEventListener('click', screenMe)
 
 volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
-seeker.addEventListener('change',changeColor)
+seeker.addEventListener('input',changeColor)
+volBtn.addEventListener('mouseover',hoverAbove)
