@@ -126,7 +126,7 @@ input[type="range"]::-webkit-slider-thumb {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   gap: 15px;
-  overflow: scroll;
+  overflow: hidden;
 }
 .video{
   position: relative;
@@ -175,7 +175,34 @@ h2 {
 
 @media (min-width:600px){
   .playlist{
-    
+    left: 2.5rem;
     width: 90%;
+  }
+}
+@media (min-width:600px){
+  .playlist{
+    left: 3rem;
+    
+  }
+}
+@media (min-width:600px){
+  .playlist{
+    position: relative;
+    left: 8rem;
+  }
+
+  .video{
+    width: 60%;
+    margin: 2rem;
+    position: relative;
+    left: 18%;
+  }
+  .main-vid{
+    height: 100%;
+  }
+  .title{
+    text-align: center;
+    position: relative;
+    bottom: 2rem;
   }
 }
