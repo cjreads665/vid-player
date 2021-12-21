@@ -16,6 +16,7 @@ body {
   border-radius: 7px;
   background-color: rgb(0, 0, 0,0.7);
   position: absolute;
+  left: -1rem;
   display: flex;
   /* justify-content: space-around; */
   flex-direction: column;
@@ -23,28 +24,34 @@ body {
   /* bottom: -1.5rem; */
   bottom: 0;
   /* left: -1rem; */
-  width: 95%;
+  width: 100%;
   margin: 1rem;
   color: white;
   padding: 2%;
 }
 .lower-lower{
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .seeker{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
+    flex-grow: 2;
 }
 .time{
-  font-size: 0.5rem;
+  position: relative;
+  font-size: 0.4rem;
+  margin-top: 0.1rem;
   /* border: solid white 2px; */
 }
 
 .seeker input{
     justify-self: center;
     width: 100%;
+    
 }
 
 .vol-main{
@@ -53,7 +60,7 @@ body {
   justify-content: space-around;
   display: flex;
   align-items: center;
-  width: 3rem;
+  width: 5rem;
 }
 .vol-main input{
   display: none;
@@ -66,7 +73,7 @@ input[type="range"] {
   
   -webkit-appearance: none;
   background-color:rgb(6, 114, 255);
-  height: 0.2rem;
+  height: 0.6rem;
   border-bottom: #333333 1 px solid;
   border-radius: 5px;
   width: 100%;
@@ -74,18 +81,21 @@ input[type="range"] {
 .seeker{
   width: 60%;
 }
+
 input[type="range"]::-moz-range-track {
   border: none;
   background: rgb(112, 111, 111);
 }
+
+
 
 /*the thumb on slider*/
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: radial-gradient(#fff, #333);
     background: white;
-  height: 0.6rem;
-  width: 0.6rem;
+  height: 0.7rem;
+  width: 0.7rem;
   border-radius: 100%;
   cursor: pointer;
 }
@@ -110,14 +120,19 @@ input[type="range"]::-webkit-slider-thumb {
   /* border: 1px solid black; */
 }
 .playlist {
-
+  /* justify-content: center;
+   */
+  position: relative;
+  left: 0.5rem;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   gap: 15px;
-  overflow: scroll;
+  overflow: hidden;
 }
 .video{
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .video video {
   width: 100vw;
@@ -157,4 +172,79 @@ h2 {
 }
 .vid video {
   width: 15%;
+}
+
+@media (min-width:600px){
+  .playlist{
+    left: 2.5rem;
+    width: 90%;
+  }
+}
+@media (min-width:600px){
+  .playlist{
+    left: 3rem;
+    
+  }
+}
+@media (min-width:1020px){
+  .playlist{
+    position: relative;
+    left: 8rem;
+  }
+
+  .video{
+    width: 60%;
+    margin: 2rem;
+    position: relative;
+    left: 18%;
+  }
+  .main-vid{
+    height: 100%;
+  }
+  .title{
+    text-align: center;
+    position: relative;
+    bottom: 2rem;
+  }
+  .time{
+    font-size: 1rem;
+  }
+  .vol-main{
+    display: inline-block;
+    /* justify-content: space-between; */
+    width: 12%;
+    font-size: 1.2rem;
+  }
+  /* .vol-main input[type="range"]{
+    display: inline;
+    height: 5px;
+    margin: 0 0.5rem;
+  } */
+  .vol-btn{
+    transition: 0.2s margin ease-in;
+    margin-right: 0.5rem;
+  }
+  .vol-btn:hover{
+    margin-right: 3.9rem;
+  }
+  .vol-btn ~ input{
+    display: inline;
+    width: 3.5rem;
+    height: 5px;
+    margin: 0;
+    position: absolute;
+    top: 0.9rem;
+    right: 1.5rem;
+    opacity: 1;
+  }
+  /* .vol-btn:hover ~ input{
+    
+    height: 5px;
+    margin: 0 0.5rem;
+  } */
+  
+  .playlist{
+    width:70% ;
+    left: 18%;
+  }
 }

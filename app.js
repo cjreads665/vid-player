@@ -54,7 +54,7 @@ let flag='pause'
 let seeker = document.getElementById('duration')
 let video = document.querySelector('.video video')
 let currentTime = [document.querySelector('.current-min'),document.querySelector('.current-sec')]
-
+// console.log(seeker)
 function zero(dura){
     let time1= Math.floor(dura/60)
     if(time1<10) time1 = ('0' + time1).slice(-2)
@@ -67,12 +67,6 @@ function zero(dura){
 video.onloadedmetadata = function (){
     let duration = this.duration
     let timeArr = zero(duration)
-    // console.log(k);
-    // let minDu = Math.floor(duration/60)
-    // if(minDu<10) minDu = ('0' + minDu).slice(-2)
-    // let secDu = Math.floor(duration%60)
-    // if(minDu<10) secDu = ('0' + secDu).slice(-2)
-    
     minutes.textContent = timeArr[0]
     seconds.textContent = timeArr[1];
     setInterval(()=>{
@@ -83,8 +77,16 @@ video.onloadedmetadata = function (){
         // console.log(timeArr);
         currentTime[1].textContent = timeArr[1]
         currentTime[0].textContent = timeArr[0];
+
     },1000)
 }
+console.log(video.currentTime);
+
+//move seeker according to time
+
+
+
+
 //mute me
 let flagg = true
 function muteMe(){
@@ -105,6 +107,7 @@ function muteMe(){
     }
     
 }
+
 
 
 // video.volume=0.32
@@ -146,28 +149,34 @@ function volChange(){
         }
 }
 
-
+let scrFlag = false;
 function screenMe(){
-    if(!vidContain.requestFullscreen()) vidContain.requestFullscreen()
-    else{
-        document.exitFullscreen()
+    if(scrFlag==false){
+        vidContain.requestFullscreen()
+        scrFlag=true
     }
+    else{
+        document.exitFullscreen();
+        scrFlag=false
+    }
+
     
 }
-//function to tell the duration of video
-function timeTracker(){
-    /**
-     *  minutes.textContent = minDu
-    seconds.textContent = secDu;
-     */
-   
-       
+
+function timeUp(){
+   var val = video.currentTime / video.duration * 100
+//    console.log(val);
+    seeker.value = val
 }
 
 
+function changeColor(){
+  console.log(this.value * video.duration);
+}
 
-
-
+// console.log(vidContain.offsetHeight);
+// if(window.innerHeight==vidCo)
+// console.log;
 
 
 //event listener for play/pause
@@ -177,5 +186,7 @@ vol.addEventListener('input',volChange)
 //fullscreen handler
 fullScr.addEventListener('click', screenMe)
 
-video.addEventListener('play',timeTracker)
 volBtn.addEventListener('click', muteMe)
+video.addEventListener('timeupdate',timeUp)
+seeker.addEventListener('input',changeColor)
+volBtn.addEventListener('mouseover',hoverAbove)
