@@ -208,7 +208,7 @@ h2 {
   .vol-main{
     display: flex;
     justify-content: space-around;
-    width: 15%;
+    width: 20%;
     transition: all 1s ease-in;
   }
   /* .vol-main input[type="range"]{
@@ -220,11 +220,18 @@ h2 {
     transition: all 1s ease-in;
 
   }
-  .vol-btn:hover ~ input{
+  .vol-btn ~ input{
     display: inline;
+    width: 30%;
+    height: 5px;
+    margin: 0;
+    position: absolute;
+  }
+  /* .vol-btn:hover ~ input{
+    
     height: 5px;
     margin: 0 0.5rem;
-  }
+  } */
   
   .playlist{
     width:70% ;
