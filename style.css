@@ -209,10 +209,25 @@ h2 {
     display: flex;
     justify-content: space-around;
     width: 15%;
+    transition: all 1s ease-in;
   }
-  .vol-main input[type="range"]{
+  /* .vol-main input[type="range"]{
     display: inline;
     height: 5px;
     margin: 0 0.5rem;
+  } */
+  .vol-btn{
+    transition: all 1s ease-in;
+
+  }
+  .vol-btn:hover ~ input{
+    display: inline;
+    height: 5px;
+    margin: 0 0.5rem;
+  }
+  
+  .playlist{
+    width:70% ;
+    left: 18%;
   }
 }
