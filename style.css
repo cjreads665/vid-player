@@ -129,6 +129,10 @@ input[type="range"]::-webkit-slider-thumb {
   gap: 15px;
   overflow: hidden;
 }
+.play-btn:hover ~ input{
+  position: absolute;
+
+}
 .video{
   position: relative;
   display: flex;
@@ -174,6 +178,8 @@ h2 {
   width: 15%;
 }
 
+
+
 @media (min-width:600px){
   .playlist{
     left: 2.5rem;
@@ -211,33 +217,17 @@ h2 {
   }
   .vol-main{
     display: inline-block;
-    /* justify-content: space-between; */
     width: 15%;
     font-size: 1.2rem;
   }
-  /* .vol-main input[type="range"]{
-    display: inline;
-    height: 5px;
-    margin: 0 0.5rem;
-  } */
+ 
   .vol-btn{
     transition: 0.2s margin ease-in;
     margin-right: 0.5rem;
   }
-  /* }
-  .vol-btn:hover{
-    margin-right: 3rem;
-
-  }
-  .vol-btn:hover ~ input{
-    display: inline;
-    opacity: 1;
-    position: relative;
-    top: -0.2rem;
-    left: 0.1rem;
-  } */
+  
   .vol-btn ~ input{
-    /* display: inline; */
+ 
     width: 3.5rem;
     height: 5px;
     margin: 0;
@@ -246,11 +236,6 @@ h2 {
     right: 1.5rem;
     opacity: 0;
   }
-  /* .vol-btn:hover ~ input{
-    
-    height: 5px;
-    margin: 0 0.5rem;
-  } */
   
   .playlist{
     width:70% ;

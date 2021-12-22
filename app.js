@@ -191,11 +191,18 @@ function hoverAbove(){
     fullScr.style.position='relative'
     fullScr.style.left='1rem'
 }
+let flag2=false
 function play(){
-    setTimeout(()=>{
-        playBtn.style.opacity = '0'
-        document.querySelector('.bottom-section').style.opacity='0'
-    },7000)
+    if(flag2=='false'){
+        setTimeout(()=>{
+            playBtn.style.opacity = '0'
+            document.querySelector('.bottom-section').style.opacity='0'
+        },7000)
+    }
+    else{
+        playBtn.style.opacity = '1'
+     document.querySelector('.bottom-section').style.opacity='1'
+    }
     
 }
 
@@ -212,12 +219,12 @@ fullScr.addEventListener('click', screenMe)
 volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
 seeker.addEventListener('input',changeColor)
-volBtn.addEventListener('mouseenter',hoverAbove)
-video.addEventListener('mouseover',()=>{
-    playBtn.style.opacity = '1'
-    document.querySelector('.bottom-section').style.opacity='1'
-})
-video.addEventListener('mouseout',play)
+// volBtn.addEventListener('mouseenter',hoverAbove)
+// video.addEventListener('mouseover',()=>{
+//     playBtn.style.opacity = '1'
+//     document.querySelector('.bottom-section').style.opacity='1'
+// })
+// video.addEventListener('mouseout',play)
 video.addEventListener('ended',()=>{
     playBtn.classList.remove('fa-pause')
     playBtn.classList.add('fa-redo')
