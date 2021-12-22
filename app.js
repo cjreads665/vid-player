@@ -191,10 +191,17 @@ function hoverAbove(){
     fullScr.style.position='relative'
     fullScr.style.left='1rem'
 }
-
+function play(){
+    setTimeout(()=>{
+        playBtn.style.opacity = '0'
+        document.querySelector('.bottom-section').style.opacity='0'
+    },4000)
+    
+}
 
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
+playBtn.addEventListener('click',play)
 //event listener for volume
 vol.addEventListener('input',volChange)
 //fullscreen handler
@@ -204,4 +211,9 @@ volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
 seeker.addEventListener('input',changeColor)
 volBtn.addEventListener('mouseenter',hoverAbove)
+video.addEventListener('mouseenter',()=>{
+    playBtn.style.opacity = '1'
+        document.querySelector('.bottom-section').style.opacity='1'
+        play()
+})
 // volBtn.addEventListener('mouseout',noHoverAbove)
