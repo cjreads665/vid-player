@@ -225,10 +225,31 @@ video.addEventListener('mouseover',()=>{
     playBtn.style.opacity = '1'
     document.querySelector('.bottom-section').style.opacity = '1'
 })
+
 video.addEventListener('mouseout',()=>{
     setTimeout(()=>{
         playBtn.style.opacity = '0'
     document.querySelector('.bottom-section').style.opacity = '0'
 
     },5000)
+})
+let arr = [video,playBtn]
+// console.log(arr);
+let isTouching = false
+arr.forEach(elem=>{
+    elem.addEventListener('touchstart',()=>{
+        if(isTouching==false){
+            setTimeout(()=>{
+                document.querySelector('.play-btn').style.opacity = '0'
+                document.querySelector('.bottom-section').style.opacity = '0'
+            },5000)
+            
+            isTouching=true
+        }
+        else{
+            document.querySelector('.play-btn').style.opacity = '1'
+            document.querySelector('.bottom-section').style.opacity = '1'
+            isTouching=false
+        }
+    })
 })
