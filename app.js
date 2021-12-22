@@ -210,23 +210,25 @@ function play(){
 
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
-video.addEventListener('click',play)
 //event listener for volume
 vol.addEventListener('input',volChange)
 //fullscreen handler
 fullScr.addEventListener('click', screenMe)
-
 volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
 seeker.addEventListener('input',changeColor)
-// volBtn.addEventListener('mouseenter',hoverAbove)
-// video.addEventListener('mouseover',()=>{
-//     playBtn.style.opacity = '1'
-//     document.querySelector('.bottom-section').style.opacity='1'
-// })
-// video.addEventListener('mouseout',play)
 video.addEventListener('ended',()=>{
     playBtn.classList.remove('fa-pause')
     playBtn.classList.add('fa-redo')
 })
-// volBtn.addEventListener('mouseout',noHoverAbove)
+video.addEventListener('mouseover',()=>{
+    playBtn.style.opacity = '1'
+    document.querySelector('.bottom-section').style.opacity = '1'
+})
+video.addEventListener('mouseout',()=>{
+    setTimeout(()=>{
+        playBtn.style.opacity = '0'
+    document.querySelector('.bottom-section').style.opacity = '0'
+
+    },5000)
+})
