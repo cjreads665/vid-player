@@ -179,10 +179,17 @@ function changeColor(){
 // console.log;
 
 function hoverAbove(){
-    volBtn.style.marginRight = '2rem';
+    volBtn.style.marginRight = '3rem';
+    setTimeout(()=>{
+    volBtn.style.marginRight = '10px';
+    volSeek.style.display= 'none'
+    volSeek.style.opacity = '0'
+    },4000)
     let volSeek = document.querySelector('.vol-btn ~ input')
     volSeek.style.display= 'inline'
     volSeek.style.opacity = '1'
+    fullScr.style.position='relative'
+    fullScr.style.left='1rem'
 }
 
 
