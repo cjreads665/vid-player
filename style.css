@@ -198,6 +198,9 @@ h2 {
     left: 8rem;
   }
 
+  .bottom-section{
+    left: 2.1rem;
+  }
   .video{
     width: 60%;
     margin: 2rem;
@@ -215,27 +218,30 @@ h2 {
   .time{
     font-size: 1rem;
   }
+  .vol-btn,.fa-expand{
+    font-size: 1.5rem;
+  }
   .vol-main{
+    /* border: 2px solid red; */
     display: inline-block;
-    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 18%;
     font-size: 1.2rem;
+    transition: 0.2s all ease-in;
+
   }
  
+  .vol-main:hover input{
+    display: inline;
+    margin: 0 0.5rem;
+  }
+
   .vol-btn{
-    transition: 0.2s margin ease-in;
     margin-right: 0.5rem;
   }
   
-  .vol-btn ~ input{
- 
-    width: 3.5rem;
-    height: 5px;
-    margin: 0;
-    position: absolute;
-    top: 0.9rem;
-    right: 1.5rem;
-    opacity: 0;
-  }
+  
   
   .playlist{
     width:70% ;
