@@ -199,6 +199,8 @@ function play(){
     
 }
 
+
+
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
 video.addEventListener('click',play)
@@ -216,4 +218,8 @@ video.addEventListener('mouseover',()=>{
     document.querySelector('.bottom-section').style.opacity='1'
 })
 video.addEventListener('mouseout',play)
+video.addEventListener('ended',()=>{
+    playBtn.classList.remove('fa-pause')
+    playBtn.classList.add('fa-redo')
+})
 // volBtn.addEventListener('mouseout',noHoverAbove)
