@@ -195,13 +195,13 @@ function play(){
     setTimeout(()=>{
         playBtn.style.opacity = '0'
         document.querySelector('.bottom-section').style.opacity='0'
-    },4000)
+    },7000)
     
 }
 
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
-playBtn.addEventListener('click',play)
+video.addEventListener('click',play)
 //event listener for volume
 vol.addEventListener('input',volChange)
 //fullscreen handler
