@@ -211,9 +211,9 @@ volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
 seeker.addEventListener('input',changeColor)
 volBtn.addEventListener('mouseenter',hoverAbove)
-video.addEventListener('mouseenter',()=>{
+video.addEventListener('mouseover',()=>{
     playBtn.style.opacity = '1'
-        document.querySelector('.bottom-section').style.opacity='1'
-        play()
+    document.querySelector('.bottom-section').style.opacity='1'
 })
+video.addEventListener('mouseout',play)
 // volBtn.addEventListener('mouseout',noHoverAbove)
