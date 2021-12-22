@@ -178,6 +178,13 @@ function changeColor(){
 // if(window.innerHeight==vidCo)
 // console.log;
 
+function hoverAbove(){
+    volBtn.style.marginRight = '2rem';
+    let volSeek = document.querySelector('.vol-btn ~ input')
+    volSeek.style.display= 'inline'
+    volSeek.style.opacity = '1'
+}
+
 
 //event listener for play/pause
 playBtn.addEventListener('click',playTime)
@@ -189,4 +196,5 @@ fullScr.addEventListener('click', screenMe)
 volBtn.addEventListener('click', muteMe)
 video.addEventListener('timeupdate',timeUp)
 seeker.addEventListener('input',changeColor)
-volBtn.addEventListener('mouseover',hoverAbove)
+volBtn.addEventListener('mouseenter',hoverAbove)
+// volBtn.addEventListener('mouseout',noHoverAbove)

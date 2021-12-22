@@ -16,7 +16,7 @@ body {
   border-radius: 7px;
   background-color: rgb(0, 0, 0,0.7);
   position: absolute;
-  left: -1rem;
+  left: 1.5rem;
   display: flex;
   /* justify-content: space-around; */
   flex-direction: column;
@@ -24,7 +24,7 @@ body {
   /* bottom: -1.5rem; */
   bottom: 0;
   /* left: -1rem; */
-  width: 100%;
+  width: 90%;
   margin: 1rem;
   color: white;
   padding: 2%;
@@ -43,7 +43,7 @@ body {
 }
 .time{
   position: relative;
-  font-size: 0.4rem;
+  font-size: 0.3rem;
   margin-top: 0.1rem;
   /* border: solid white 2px; */
 }
@@ -66,7 +66,7 @@ body {
   display: none;
  width: 20%;
   /* margin-left: 5%; */
-  margin-right: 0.2rem;
+  /* margin-right: 0.2rem; */
 }
 /*the sliders*/
 input[type="range"] {
@@ -212,7 +212,7 @@ h2 {
   .vol-main{
     display: inline-block;
     /* justify-content: space-between; */
-    width: 12%;
+    width: 15%;
     font-size: 1.2rem;
   }
   /* .vol-main input[type="range"]{
@@ -224,18 +224,27 @@ h2 {
     transition: 0.2s margin ease-in;
     margin-right: 0.5rem;
   }
+  /* }
   .vol-btn:hover{
-    margin-right: 3.9rem;
+    margin-right: 3rem;
+
   }
-  .vol-btn ~ input{
+  .vol-btn:hover ~ input{
     display: inline;
+    opacity: 1;
+    position: relative;
+    top: -0.2rem;
+    left: 0.1rem;
+  } */
+  .vol-btn ~ input{
+    /* display: inline; */
     width: 3.5rem;
     height: 5px;
     margin: 0;
     position: absolute;
     top: 0.9rem;
     right: 1.5rem;
-    opacity: 1;
+    opacity: 0;
   }
   /* .vol-btn:hover ~ input{
     
